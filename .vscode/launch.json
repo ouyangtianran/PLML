@@ -1,0 +1,145 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+        "name": "semco/launch_semco_EP.py",
+        "type": "python",
+        "request": "launch",
+        "program": "${workspaceFolder}/semco/launch_semco_EP.py",
+        "cwd": "/home/tianran/PLML/semco",
+        "console": "integratedTerminal",
+        "env": {"PYTHONPATH": "${workspaceRoot}",
+                "CUDA_VISIBLE_DEVICES":"0,1"},
+        "justMyCode": true,
+        "args": [
+            "--dataset-name", "mini-imagenet",
+            "--model_backbone",  "conv4",
+            "--num_per_class", "20"          
+        ]
+    },
+    {
+        "name": "TorchSSL/flexmatch.py",
+        "type": "python",
+        "request": "launch",
+        "program": "${workspaceFolder}/TorchSSL/flexmatch.py",
+        "cwd": "/home/tianran/PLML/TorchSSL",
+        "console": "integratedTerminal",
+        "env": {"PYTHONPATH": "${workspaceRoot}",
+                "CUDA_VISIBLE_DEVICES":"1"},
+        "justMyCode": true,
+        "args": [
+            "--c", "./config/flexmatch/flexmatch_mini_020.yaml",
+            // "--num_per_class", "20" ,
+            // "--dataset", "mini-imagenet",
+            // "--num_classes",  "64",
+            // "--net", "conv4",
+            // "--save_name", "flexmatch_mini-imagenet_conv4_npc20",
+            // "--num_train_iter", "400000",
+            // "--multiprocessing-distributed", "false",
+            // "--overwrite", 
+            // "--gpu", "0"
+        ]
+    },
+    {
+        "name": "MarginMatch/marginmatch.py",
+        "type": "python",
+        "request": "launch",
+        "program": "${workspaceFolder}/MarginMatch/marginmatch.py",
+        "cwd": "/home/tianran/PLML/MarginMatch",
+        "console": "integratedTerminal",
+        "env": {"PYTHONPATH": "${workspaceRoot}",
+                "CUDA_VISIBLE_DEVICES":"1"},
+        "justMyCode": true,
+        "args": [
+            "--c", "./config/marginmatch/marginmatch_mini_020.yaml" ,
+            // "--c", "./config/marginmatch/marginmatch_mini_050.yaml" ,
+            // "--c", "./config/marginmatch/marginmatch_mini_100.yaml" ,
+            
+        ]
+    },
+    {
+        "name": "EP-semi/trainval_semi_base.py",
+        "type": "python",
+        "request": "launch",
+        "program": "${workspaceFolder}/EP-semi/trainval_semi_base.py",
+        "cwd": "/home/tianran/PLML/EP-semi",
+        "console": "integratedTerminal",
+        "env": {"PYTHONPATH": "${workspaceRoot}",
+                "CUDA_VISIBLE_DEVICES":"0"},
+        "justMyCode": true,
+        "args": [
+            "-e", "pretrain",
+            "-sb", "./logs_semi_base_norm/pretrain3",
+
+            // "-e", "pretrain_tiered",
+            // "-sb", "./logs_semi_base_norm/pretrain_tiered",
+            // "-e", "finetune_noise_tiered",
+            // "-sb", "./logs_noise_v12_base/finetune_noise_tiered",
+
+            "-d", "./data",
+        ]
+    },
+    {
+        "name": "EP-semi/trainval_semi_test.py",
+        "type": "python",
+        "request": "launch",
+        "program": "${workspaceFolder}/EP-semi/trainval_semi_test.py",
+        "cwd": "/home/tianran/PLML/EP-semi",
+        "console": "integratedTerminal",
+        "env": {"PYTHONPATH": "${workspaceRoot}",
+                "CUDA_VISIBLE_DEVICES":"0"},
+        "justMyCode": true,
+        "args": [
+            // "-e", "flexmatch_finetune",
+            // "-sb", "./logs_noise_v12/flexmatch_finetune",
+
+            // "-e", "marginmatch_finetune",
+            // "-sb", "./logs_noise_v12/marginmatch_finetune",
+
+            // "-e", "marginmatch_ssl",
+            // "-sb", "./logs_noise_v12/marginmatch_ssl",
+
+            "-e", "proto_finetune_marginmatch",
+            "-sb", "./logs_noise_v12/proto_finetune_marginmatch",
+
+            // "-e", "proto_finetune_flexmatch",
+            // "-sb", "./logs_noise_v12/proto_finetune_flexmatch",
+
+            "-d", "./data",
+        ]
+    },
+    {
+        "name": "EP-semi/save_final_table_ssl.py",
+        "type": "python",
+        "request": "launch",
+        "program": "${workspaceFolder}/EP-semi/save_final_table_ssl.py",
+        "cwd": "/home/tianran/PLML/EP-semi",
+        "console": "integratedTerminal",
+        "env": {"PYTHONPATH": "${workspaceRoot}",
+                "CUDA_VISIBLE_DEVICES":"1"},
+        "justMyCode": true,
+        "args": [
+            "-m", "ssl",
+            "-sb", "./logs_noise_v12/marginmatch_ssl",
+        ]
+    },
+    {
+        "name": "EP-semi/testing.py",
+        "type": "python",
+        "request": "launch",
+        "program": "${workspaceFolder}/EP-semi/testing.py",
+        "cwd": "/home/tianran/PLML/EP-semi",
+        "console": "integratedTerminal",
+        "env": {"PYTHONPATH": "${workspaceRoot}",
+                "CUDA_VISIBLE_DEVICES":"1"},
+        "justMyCode": true,
+        "args": [
+            "-sb", "./logs_noise_v12/proto_finetune_flexmatch",
+            "-p",  "True"
+        ]
+    },
+]
+}

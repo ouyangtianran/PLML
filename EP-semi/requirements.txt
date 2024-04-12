@@ -1,0 +1,4 @@
+haven-ai>=0.0
+nltk
+tensorboardX
+h5py
