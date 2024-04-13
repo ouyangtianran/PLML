@@ -6,7 +6,7 @@ This repository contains the official code for "Pseudo-Labeling Based Practical 
 
 ### Step 1: Data Preparation
 
-Download the required data and pre-trained models from [this link](https://drive.google.com/file/d/1jl1dUGLyCZn8LtDYwhNRZTMUSIAsgyjb/view?usp=sharing) and place the `data/` folder inside `EP-semi/`. If necessary, you can also use `EP-semi/get_split_index_for_semi_v2.py` to re-split the data.
+Download the required data and pre-trained models from [this link](https://drive.google.com/file/d/1ddxNe1slXSFVkF3pli2WP0x6JRwYYdOg/view?usp=sharing) and place the `data/` folder inside `EP-semi/`. If necessary, you can also use `EP-semi/get_split_index_for_semi_v2.py` to re-split the data.
 
 ### Step 2: Semi-Supervised Pre-training
 
