@@ -51,35 +51,13 @@
         "cwd": "/home/tianran/PLML/MarginMatch",
         "console": "integratedTerminal",
         "env": {"PYTHONPATH": "${workspaceRoot}",
-                "CUDA_VISIBLE_DEVICES":"1"},
-        "justMyCode": true,
-        "args": [
-            "--c", "./config/marginmatch/marginmatch_mini_020.yaml" ,
-            // "--c", "./config/marginmatch/marginmatch_mini_050.yaml" ,
-            // "--c", "./config/marginmatch/marginmatch_mini_100.yaml" ,
-            
-        ]
-    },
-    {
-        "name": "EP-semi/trainval_semi_base.py",
-        "type": "python",
-        "request": "launch",
-        "program": "${workspaceFolder}/EP-semi/trainval_semi_base.py",
-        "cwd": "/home/tianran/PLML/EP-semi",
-        "console": "integratedTerminal",
-        "env": {"PYTHONPATH": "${workspaceRoot}",
                 "CUDA_VISIBLE_DEVICES":"0"},
         "justMyCode": true,
         "args": [
-            "-e", "pretrain",
-            "-sb", "./logs_semi_base_norm/pretrain3",
-
-            // "-e", "pretrain_tiered",
-            // "-sb", "./logs_semi_base_norm/pretrain_tiered",
-            // "-e", "finetune_noise_tiered",
-            // "-sb", "./logs_noise_v12_base/finetune_noise_tiered",
-
-            "-d", "./data",
+            // "--c", "./config/marginmatch/marginmatch_mini_020.yaml" ,
+            "--c", "./config/marginmatch/marginmatch_mini_050.yaml" ,
+            // "--c", "./config/marginmatch/marginmatch_mini_100.yaml" ,
+            
         ]
     },
     {
@@ -94,19 +72,19 @@
         "justMyCode": true,
         "args": [
             // "-e", "flexmatch_finetune",
-            // "-sb", "./logs_noise_v12/flexmatch_finetune",
+            // "-sb", "./logs/flexmatch_finetune",
 
-            // "-e", "marginmatch_finetune",
-            // "-sb", "./logs_noise_v12/marginmatch_finetune",
+            "-e", "marginmatch_finetune",
+            "-sb", "./logs/marginmatch_finetune",
 
             // "-e", "marginmatch_ssl",
-            // "-sb", "./logs_noise_v12/marginmatch_ssl",
+            // "-sb", "./logs/marginmatch_ssl",
 
-            "-e", "proto_finetune_marginmatch",
-            "-sb", "./logs_noise_v12/proto_finetune_marginmatch",
+            // "-e", "proto_finetune_marginmatch",
+            // "-sb", "./logs/proto_finetune_marginmatch",
 
             // "-e", "proto_finetune_flexmatch",
-            // "-sb", "./logs_noise_v12/proto_finetune_flexmatch",
+            // "-sb", "./logs/proto_finetune_flexmatch",
 
             "-d", "./data",
         ]
@@ -123,7 +101,7 @@
         "justMyCode": true,
         "args": [
             "-m", "ssl",
-            "-sb", "./logs_noise_v12/marginmatch_ssl",
+            "-sb", "./logs/marginmatch_ssl",
         ]
     },
     {
@@ -137,7 +115,7 @@
                 "CUDA_VISIBLE_DEVICES":"1"},
         "justMyCode": true,
         "args": [
-            "-sb", "./logs_noise_v12/proto_finetune_flexmatch",
+            "-sb", "./logs/proto_finetune_flexmatch",
             "-p",  "True"
         ]
     },

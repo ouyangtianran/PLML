@@ -36,7 +36,7 @@ dist_backend: nccl
 gpu: None
 num_per_class: 20
 save_name: flexmatch_mini-imagenet_conv4_npc020
-data_dir: ./EP_data
+data_dir: ../EP-semi/data
 dataset: mini-imagenet
 num_classes: 64
 net: conv4

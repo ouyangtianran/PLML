@@ -3,7 +3,7 @@
 #SBATCH --gres=gpu:2
 #SBATCH --time=48:00:00
 #SBATCH --partition=iiai
-#SBATCH --job-name=mini_fl_pr
+#SBATCH --job-name=mini_proto
 
 nvidia-smi
 export CUDA_VISIBLE_DEVICES=0,1
@@ -13,7 +13,7 @@ source activate EP
 cd ..
 
 time=$(date "+%Y-%m-%d-%H-%M-%S")
-e=flexmatch_proto_lr0001
+e=proto_finetune_flexmatch
 out=results/${e}_${time}.txt
 
 sb=./logs/${e}

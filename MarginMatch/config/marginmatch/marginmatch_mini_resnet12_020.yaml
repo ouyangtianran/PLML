@@ -9,7 +9,7 @@ epoch: 1
 num_train_iter: 1048576
 num_eval_iter: 1000
 num_labels: 20
-batch_size: 32
+batch_size: 64
 eval_batch_size: 1024
 hard_label: True
 T: 0.5

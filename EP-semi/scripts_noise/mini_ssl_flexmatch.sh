@@ -14,9 +14,9 @@ cd ..
 
 time=$(date "+%Y-%m-%d-%H-%M-%S")
 e=flexmatch_ssl
-out=results_noise_v12/${e}_${time}.txt
+out=results/${e}_${time}.txt
 
-sb=./logs_noise_v12/${e}
+sb=./logs/${e}
 echo $sb
 #python3 trainval_semi_test.py -e $e -sb $sb -d ./data >>$out
 python3 save_final_table_ssl.py -sb $sb  -m ssl >>$out
